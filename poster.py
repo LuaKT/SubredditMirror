@@ -1,4 +1,5 @@
 import time
+import sys
 import praw
 import sqlite3
 
@@ -27,8 +28,6 @@ result = c.fetchall()
 
 try:
 	for submission in result:
-		print c.rowcount
-		print submission['post_id']
 		if submission['reposted'] == 0:
 			print "POSTING: " + submission['post_id']
 			try:
