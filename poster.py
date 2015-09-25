@@ -34,8 +34,8 @@ try:
 				submit(submission['title'], submission['url'], submission['is_self'], submission['selftext'], submission['nsfw'])
 				c.execute('INSERT OR REPLACE into resubmitted VALUES (?, ?)', [submission['post_id'], True])
 				conn.commit()
-				print "Sleeping 3 seconds"
-				time.sleep(3)
+				print "Sleeping 2 seconds"
+				time.sleep(2)
 			except praw.errors.AlreadySubmitted:
 				print "Already Submitted, ignoring: " + submission['post_id']
 				c.execute('INSERT OR REPLACE into resubmitted VALUES (?, ?)', [submission['post_id'], True])
